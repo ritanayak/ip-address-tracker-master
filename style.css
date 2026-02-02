@@ -1,0 +1,39 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+header {
+  background: #9aa767;
+  color: #fff;
+  padding: 1rem;
+  text-align: center;
+}
+
+form {
+  display: flex;
+  justify-content: center;
+  margin: 1rem 0;
+}
+
+input {
+  padding: 0.5rem;
+  width: 250px;
+}
+
+button {
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+.info {
+  display: flex;
+  justify-content: space-around;
+  background: #f6f7f5;
+  color: #000;
+  padding: 1rem;
+}
+
+#map {
+  height: 70vh;
+}
