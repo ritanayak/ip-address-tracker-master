@@ -35,12 +35,10 @@ function updateInfo(data) {
     document.getElementById("location").innerText = `Location: ${data.location.city}, ${data.location.country}`;
     document.getElementById("isp").innerText = `ISP: ${data.isp}`;
 }
-
-function updateMap(data) {
-    const lat = data.location.lat;
-    const lng = data.location.lng;
-
-    map.setView( [lat, lag], 13);
+ // Update map
+function updateMap(data, lng) {
+    
+    map.setView( [lat, lng], 13);
 
 
 if (marker) {
@@ -49,5 +47,3 @@ if (marker) {
     marker = l.marker([lat, lng]). addTo(map);
 }
 }
-
-fetchIP();
