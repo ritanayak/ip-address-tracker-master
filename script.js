@@ -57,3 +57,27 @@ function updateUI (data) {
 function isIP (value) {
    return /^(?:\d{1,3}\.){3}\d{1,3}$/.test(value); 
 }
+
+// Search
+Form.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const value = input.value.trim();
+
+  try {
+    const data = await fetchIPData(value);
+    updateUI(data);
+  } catch (err) {
+    alert("Invalid IP address or domain");
+    console.error(err);
+  }
+});
+
+// Initial load – user's IP
+(async function init() {
+  try {
+    const data = await fetchIPData();
+    updateUI(data);
+  } catch (err) {
+    console.error(err);
+  }
+})();
