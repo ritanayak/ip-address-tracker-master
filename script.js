@@ -1,22 +1,22 @@
 import { API_KEY } from "./secret.js";
 
-const ip = document.getElementById("ip");
-const Location = document.getElementById("location");
-const TimeZone = document.getElementById("timeZone");
-const Isp = document.getElementById("isp");
+const ipE1 = document.getElementById("ip");
+const LocationE1 = document.getElementById("location");
+const timeZoneE1 = document.getElementById("timeZone");
+const IspE1 = document.getElementById("isp");
 const input = document.getElementById("SearchInput");
 const Form = document.getElementById("SearchForm");
 
 //Initialize map
-const map = Location.map("map").setView([0, 0], 2)
-Location.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+const map = L.map("map").setView([0, 0], 2)
+L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
   attribution: "&copy; OpenStreetMap contributors",
 }).addTo(map);
 
 let marker;
 
 //Fetch IP data
-async function fetchIPData(query ='' ) {
+async function fetchIPData(query =" " ) {
         const url = `https://geo.ipify.org/api/v2/country,city?apiKey=${API_KEY}&ipAddress=${query}`
         const res = await fetch(url);
         if (!res.ok) throw new Error ("API request failed");
@@ -24,11 +24,6 @@ async function fetchIPData(query ='' ) {
     }
  
 
-function updateInfo(data) {
-    document.getElementById("ip").innerText = `IP: ${data.ip}`;
-    document.getElementById("location").innerText = `Location: ${data.location.city}, ${data.location.country}`;
-    document.getElementById("isp").innerText = `ISP: ${data.isp}`;
-}
  // Update map
 function updateMap(data, lng) {
     
@@ -62,4 +57,3 @@ function updateUI (data) {
 function isIP (value) {
    return /^(?:\d{1,3}\.){3}\d{1,3}$/.test(value); 
 }
-
