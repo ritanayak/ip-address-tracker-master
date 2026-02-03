@@ -1,4 +1,3 @@
-import { update } from "lodash";
 import { API_KEY } from "./secret.js";
 
 const ip = document.getElementById("ip");
@@ -16,19 +15,14 @@ Location.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
 
 let marker;
 
-//Fetch user's IP info on load
-async function fetchIP(ip ='' ) {
-    try {
-        const res = await fetch (`https://geo.ipify.org/api/v2/country,city?apiKey=${API_KEY}&ipAddress=${ip}`)
-        const data = await res.json();
-        updateInfo(data);
-        updateMap(data);
-    } catch (err) {
-
-        console.error(err);
-        alert("Failed to fetch IP information");
+//Fetch IP data
+async function fetchIPData(query ='' ) {
+        const url = `https://geo.ipify.org/api/v2/country,city?apiKey=${API_KEY}&ipAddress=${query}`
+        const res = await fetch(url);
+        if (!res.ok) throw new Error ("API request failed");
+        return res.json();
     }
-}
+ 
 
 function updateInfo(data) {
     document.getElementById("ip").innerText = `IP: ${data.ip}`;
@@ -62,3 +56,10 @@ function updateUI (data) {
     updateMap(lat, lng);
 
 }
+
+
+//Validate IP
+function isIP (value) {
+   return /^(?:\d{1,3}\.){3}\d{1,3}$/.test(value); 
+}
+
