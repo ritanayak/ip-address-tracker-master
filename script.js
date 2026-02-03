@@ -47,3 +47,18 @@ if (marker) {
     marker = l.marker([lat, lng]). addTo(map);
 }
 }
+
+// Update UI
+
+function updateUI (data) {
+    const { ip, isp, location } = data;
+    const { city, region, country, lat, lng, timezone } = location;
+
+    ip.textContent = ip;
+    location.textContent = `${city}, ${region}, ${country}`;
+    timezone.textContent =  `UTC ${timezone}`;
+    isp. textContent = isp;
+
+    updateMap(lat, lng);
+
+}
