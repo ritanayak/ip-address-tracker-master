@@ -1,29 +1,50 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
+  background-color: #f0f2f5;
+  color: #2b2b2b;
 }
 
 header {
   background: #9aa767;
   color: #fff;
-  padding: 1rem;
+  padding: 1.5rem 1rem;
   text-align: center;
+}
+
+header h1 {
+  margin: 0 0 1rem 0;
+  font-size: 1.8rem;
 }
 
 form {
   display: flex;
   justify-content: center;
   margin: 1rem 0;
+  flex-wrap: wrap;
+  gap: 0.5rem;
 }
 
 input {
   padding: 0.5rem;
   width: 250px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
 }
 
 button {
   padding: 0.5rem 1rem;
   cursor: pointer;
+  background-color: #555;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #333;
 }
 
 .info {
@@ -32,8 +53,57 @@ button {
   background: #f6f7f5;
   color: #000;
   padding: 1rem;
+  background: #f6f7f5;
+  margin: 0 1rem;
+  border-radius: 8px;
+}
+
+.info div {
+  text-align: center;
+  min-width: 120px;
+  margin-bottom: 1rem;
+}
+
+.info p {
+  margin: 0;
+  font-size: 0.8rem;
+  color: #555;
+}
+
+.info span {
+  font-weight: bold;
+  font-size: 1.1rem;
 }
 
 #map {
   height: 70vh;
+  width: 90%;
+  max-width: 1000px;
+  margin: 1rem auto;
+  border-radius: 8px;
 }
+
+.attribution {
+  text-align: center;
+  font-size: 0.8rem;
+  padding: 1rem;
+  color: #555;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  form {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  input {
+    width: 100%;
+  }
+
+  .info {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+}
+
