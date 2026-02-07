@@ -6,10 +6,35 @@ body {
 }
 
 header {
-  background: #9aa767;
   color: #fff;
-  padding: 1.5rem 1rem;
+  padding: 2.5rem 1rem;
   text-align: center;
+  position: relative;
+  overflow: hidden;
+  background-image: url('./images/pattern-bg-desktop.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(36,58,115,0.45), rgba(88,65,170,0.45));
+  pointer-events: none;
+}
+
+/* keep content above overlay */
+header h1,
+header form,
+header .info {
+  position: relative;
+  z-index: 1;
+}
+
+header h1 {
+  text-shadow: 0 1px 3px rgba(0,0,0,0.5);
 }
 
 header h1 {
@@ -91,19 +116,73 @@ button:hover {
 }
 
 /* Responsive */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
+  header {
+    background-image: url('./images/pattern-bg-mobile.png');
+   bottom: unset;
+  }
+
+  header h1 {
+    font-size: 1.4rem;
+    margin-bottom: 1.2rem;
+  }
+
   form {
-    flex-direction: column;
-    gap: 0.5rem;
+    flex-direction: row;
+    width: 100%;
+    max-width: 340px;
+    margin: 0 auto;
   }
 
   input {
-    width: 100%;
+    flex: 1;
+    border-radius: 10px 0 0 10px;
+    padding: 0.8rem;
+    font-size: 1rem;
   }
 
+  button {
+    border-radius: 0 10px 10px 0;
+    padding: 0 1rem;
+    background-color: #000;
+  }
+
+  /* Info card */
   .info {
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
     flex-direction: column;
-    gap: 0.8rem;
+    width: calc(100% - 2rem);
+    max-width: 340px;
+    gap: 1rem;
+    padding: 1.5rem 1rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+    z-index: 10;
+    bottom: -4.5rem;
+  }
+
+  .info div {
+    text-align: center;
+  }
+
+  .info p {
+    font-size: 0.7rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  .info span {
+    font-size: 1.1rem;
+  }
+
+  /* Map */
+  #map {
+    margin-top: 0;
+    height: calc(100vh - 220px);
+    width: 100%;
+    border-radius: 0;
+    z-index: 1;
   }
 }
-
