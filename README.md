@@ -1,6 +1,6 @@
 # Frontend Mentor - IP Address Tracker Solution
 
-This is a solution to the [IP Address Tracker challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/ip-address-tracker-I8-0yYAH0). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
+This is a solution to the [IP Address Tracker challenge on Frontend Mentor](https://rita-ip-address-tracker.netlify.app). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
 ---
 
@@ -38,13 +38,13 @@ The goal was to build a responsive **IP Address Tracker** application that:
 ### Screenshot
 
 
-![alt text](<Screenshot 2026-02-03 133756.png>)
+![IP-Address Tracker](<Screenshot 2026-02-03 133756.png>)
 ---
 
 ### Links https://rita-ip-address-tracker.netlify.app/
 
 - Solution URL: [Your GitHub Repository](https://github.com/ritanayak/ip-address-tracker-master)  
-- Live Site URL: [View Live Site](https://your-live-site-url.com)  
+- Live Site URL: [View Live Site](https://rita-ip-address-tracker.netlify.app/)  
 
 ---
 
@@ -55,7 +55,7 @@ The goal was to build a responsive **IP Address Tracker** application that:
 - HTML5 semantic markup  
 - CSS3 with Flexbox and Grid for layout  
 - Mobile-first responsive design  
-- JavaScript (ES6 modules)  
+- JavaScript  
 - [LeafletJS](https://leafletjs.com/) for interactive maps  
 - [IP Geolocation API by IPify](https://geo.ipify.org/)  
 
